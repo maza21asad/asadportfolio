@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 function Footer() {
   return (
     <footer className="footer">
-      All rights researve to Mohammed Asaduzzaman Asad.
+      All rights reserved © 2024 Mohammed Asaduzzaman Asad.
       <br />
       Contact via <Link className="gmail">email</Link>. Lets connect on{" "}
       <Link className="linkedIn">LinkedIn</Link>
