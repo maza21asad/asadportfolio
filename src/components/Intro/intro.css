@@ -1,0 +1,104 @@
+#intro {
+    height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.bgImg {
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    z-index: -1;
+    object-fit: cover;
+    height: 100vh;
+    width: 60vh;
+}
+
+.introContent {
+    height: 100vh;
+    width: 100vh;
+    padding: 2rem;
+    margin-left: 5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.greeting {
+    font-size: 1.3rem;
+    font-weight: 100;
+    padding-bottom: .5rem;
+}
+
+.intoAsad {
+    color: #627a84;
+}
+
+.introPara {
+    padding: 1.2rem 0;
+    font-size: medium;
+    font-weight: 100;
+}
+
+.hireMeBtn {
+    background: white;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    padding: 0.50rem 1.2rem;
+    border: none;
+    border-radius: 2rem;
+    justify-content: center;
+}
+
+.hireMeBtn:hover {
+    background: #627a84;
+    cursor: pointer;
+}
+
+.hireMe {
+    object-fit: cover;
+    margin: 0 0.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+@media screen and (max-width:840px) {
+    .bgImg {
+        right: -10vw;
+    }
+
+    .introContent {
+        font-size: 4vw;
+        margin-left: 0;
+    }
+
+    .greeting {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .bgImg {
+        height: 100vh;
+        right: -20vw;
+    }
+
+    .introContent {
+        font-size: 5vw;
+    }
+
+    .greeting {
+        font-size: 4vw;
+    }
+
+    .introPara {
+        font-size: small;
+        width: 100vw;
+        padding-right: 4rem;
+    }
+}

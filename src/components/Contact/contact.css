@@ -1,0 +1,75 @@
+#contact {
+    min-height: calc(100vh - 7rem);
+    width: 100vw;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.contactTitle {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.contactDesc {
+    padding: 1rem;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.contactForm {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    max-width: 60rem;
+}
+
+.name, .email, .msg {
+    font-size: medium;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-color: #627a84;
+    border-radius: 0.5rem;
+    background: rgb(40, 40, 40);
+}
+
+.submitBtn {
+    background: white;
+    padding: 0.75rem 3.5rem;
+    border: none;
+    border-radius: 2rem;
+    margin: 0.5rem;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+    background: #627a84;
+}
+
+.socialLinks {
+    margin: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link {
+    object-fit: cover;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 1rem;
+}
+
+.link:hover {
+    cursor: pointer;
+}

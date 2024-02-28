@@ -1,0 +1,35 @@
+.footer {
+    width: 100vw;
+    height: 3rem;
+    background: rgb(40, 40, 40);
+    font-size: smaller;
+    font-weight: 100;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    padding: 0.5rem;
+}
+
+.gmail {
+    text-decoration:underline;
+}
+
+.gmail:hover {
+    cursor: pointer;
+    color: #627a84;
+}
+
+.linkedIn {
+    text-decoration:underline;
+}
+
+.linkedIn:hover {
+    cursor: pointer;
+    color: #627a84;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        font-size: x-small;
+    }
+}
