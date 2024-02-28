@@ -2,6 +2,7 @@
     height: calc(100vh - 4rem);
     width: 100vw;
     max-width: 75rem;
+    display: flex;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -16,9 +17,15 @@
     width: 60vh;
 }
 
+.bgImg1 {
+    object-fit: cover;
+    height: 100vh;
+    width: 60vh;
+}
+
 .introContent {
     height: 100vh;
-    width: 100vh;
+    width: 110vh;
     padding: 2rem;
     margin-left: 5rem;
     font-size: 2.2rem;
@@ -26,6 +33,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
 }
 
 .greeting {
@@ -69,12 +77,16 @@
 
 @media screen and (max-width:840px) {
     .bgImg {
-        right: -10vw;
+        object-fit: cover;
+        height: 100vh;
+        width: 100vw;
+        right: 0;
     }
 
     .introContent {
         font-size: 4vw;
         margin-left: 0;
+        width: 100vw;
     }
 
     .greeting {
@@ -84,12 +96,16 @@
 
 @media screen and (max-width:480px) {
     .bgImg {
+        object-fit: cover;
         height: 100vh;
-        right: -20vw;
+        width: 100vw;
+        right: 0;
+        padding-left: 7rem;
     }
 
     .introContent {
         font-size: 5vw;
+        width: 100vw;
     }
 
     .greeting {
@@ -98,7 +114,5 @@
 
     .introPara {
         font-size: small;
-        width: 100vw;
-        padding-right: 4rem;
     }
 }
