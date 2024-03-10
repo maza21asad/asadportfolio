@@ -63,7 +63,7 @@ const Navbar = () => {
         onClick={() => {
           document
             .getElementById("contact")
-            .scrollIntoView({ behavior: "smooth" });
+            .scrollIntoView({ behavior: "smooth", duration: "500" });
         }}
       >
         <img src={contactImg} alt="Contact Me" className="desktopMenuImg" />{" "}
