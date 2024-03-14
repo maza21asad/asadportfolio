@@ -18,7 +18,14 @@ function Intro() {
           Engineering from Xiamen University Malaysia.
         </p>
         <Link>
-          <button className="hireMeBtn">
+          <button
+            className="hireMeBtn"
+            onClick={() => {
+              document
+                .getElementById("contact")
+                .scrollIntoView({ behavior: "smooth", duration: "500" });
+            }}
+          >
             <img src={hireMe} alt="Hire me" className="hireMe" />
             Hire Me
           </button>

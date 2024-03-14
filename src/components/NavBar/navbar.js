@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import logo from "../../assets/LogoAsad.png";
 import contactImg from "../../assets/contact-form.png";
@@ -6,7 +6,52 @@ import { Link } from "react-scroll";
 import MobMenu from "../../assets/menu.png";
 
 const Navbar = () => {
+  // const [showMenu, setShowMenu] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
+  // const setDarkMode = () => {
+  //   document.querySelector("body").setAttribute("data-theme", "dark");
+  //   // localStorage.setItem("selectedTheme", "dark"); //after refresh stay on dark mode
+  //   setIsDarkMode(true);
+  // };
+  // const setLightMode = () => {
+  //   document.querySelector("body").setAttribute("data-theme", "light");
+  //   // localStorage.setItem("selectedTheme", "light"); //after refresh stay on light mode
+  //   setIsDarkMode(false);
+  // };
+
+  // // const selectedTheme = localStorage.getItem("selectedTheme");
+
+  // // if (selectedTheme === "dark") {
+  // //   setDarkMode();
+  // // }
+
+  // const toggleTheme = (e) => {
+  //   if (e.target.checked) {
+  //     setDarkMode();
+  //   } else {
+  //     setLightMode();
+  //   }
+  // };
+
   const [showMenu, setShowMenu] = useState(false);
+
+  // -----darkMode-----
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    const selectedTheme = localStorage.getItem("selectedTheme");
+    if (selectedTheme === "dark") {
+      document.querySelector("body").setAttribute("data-theme", "dark");
+      setIsDarkMode(true);
+    }
+  }, []); // Empty dependency array to run only once on mount
+
+  const toggleTheme = () => {
+    const newTheme = isDarkMode ? "light" : "dark";
+    document.querySelector("body").setAttribute("data-theme", newTheme);
+    localStorage.setItem("selectedTheme", newTheme);
+    setIsDarkMode(!isDarkMode);
+  };
+  // -------------
 
   return (
     <nav className="navbar">
@@ -58,17 +103,36 @@ const Navbar = () => {
           Clients
         </Link>
       </div>
-      <button
-        className="desktopMenuBtn"
-        onClick={() => {
-          document
-            .getElementById("contact")
-            .scrollIntoView({ behavior: "smooth", duration: "500" });
-        }}
-      >
-        <img src={contactImg} alt="Contact Me" className="desktopMenuImg" />{" "}
-        CONTACT ME
-      </button>
+
+      <div className="contact-DarkMode-container">
+        <button
+          className="desktopMenuBtn"
+          onClick={() => {
+            document
+              .getElementById("contact")
+              .scrollIntoView({ behavior: "smooth", duration: "500" });
+          }}
+        >
+          <img src={contactImg} alt="Contact Me" className="desktopMenuImg" />{" "}
+          CONTACT ME
+        </button>
+
+        {/* ------- DarkMode -------- */}
+        <div className="dark_mode">
+          <input
+            className="dark_mode_input"
+            type="checkbox"
+            id="darkmode-toggle"
+            onChange={toggleTheme}
+            checked={isDarkMode}
+          />
+          <label
+            className="dark_mode_label"
+            for="darkmode-toggle"
+            title={isDarkMode ? "Change to Light Mode" : "Change to Dark Mode"}
+          ></label>
+        </div>
+      </div>
 
       {/* ----------------Mobile Navbar--------------- */}
       <img
@@ -134,6 +198,23 @@ const Navbar = () => {
         >
           Contact
         </Link>
+        {/* ---------------- */}
+        <div className="dark_mode2">
+          Theme: Dark/Light
+          <input
+            className="dark_mode_input"
+            type="checkbox"
+            id="darkmode-toggle"
+            onChange={toggleTheme}
+            checked={isDarkMode}
+          />
+          <label
+            className="dark_mode_label"
+            for="darkmode-toggle"
+            title={isDarkMode ? "Change to Light Mode" : "Change to Dark Mode"}
+          ></label>
+        </div>
+        {/* --------------- */}
       </div>
     </nav>
   );
