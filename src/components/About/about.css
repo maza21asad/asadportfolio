@@ -1,75 +1,111 @@
 #about {
-    /* overflow: hidden; */
-    /* height: 100vh; */
     min-height: calc(100vh - 4rem);
     width: 100vw;
     max-width: 60rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    padding: 1rem;
     margin: 0 auto;
 }
 
 .aboutTitle {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin-top: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .aboutDesc {
     font-weight: 200;
     font-size: 1rem;
     max-width: 55rem;
-    padding: 0 2rem;
+    padding: 0.5rem 0rem;
 }
 
-.aboutBars {
-    margin: 1.5rem;
-    width: 100vw;
-    max-width: 80%;
-    text-align: left;
-}
-
-.devBar {
+.tabs {
     display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #627a84;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 130%;
+}
+
+.tab-contents ul li {
+    /* list-style: none; */
+    margin: 10px 0;
+    font-size: 13px;
     margin: 1rem;
-    padding: 1.5rem 2rem;
-    border-radius: 0.5rem;
-    background: rgb(50, 50, 50);
+}
+.tab-contents ul li span {
+    /* color: #ff004f; */
+    /* color: #b5c8d1; */
+    color: var(--text_theme_color);
+    font-size: 15px;
+    font-weight: 600;
+}
+.tab-contents {
+    display: none;
 }
 
-.devBarImg {
-    object-fit: cover;
-    height: 3rem;
-    width: 3rem;
-    margin-right: 2rem;
-}
-
-.devBarText>p {
-    font-size: 0.8rem;
-    font-weight: 200;
-    padding-top: 0.35rem;
+.tab-contents.active-tab {
+    display: block;
 }
 
 @media screen and (max-width:720px) {
-    .devBarText>p {
-        font-size: 2vw;
+    .tabs {
+        display: flex;
+        margin: 45px 0 10px;
+    }
+    .tab-links {
+        margin-right: 2rem;
+        font-size: 1rem;
+        font-weight: 500;
     }
 }
 
 @media screen and (max-width:480px) {
-    .devBarImg {
-        height: 2.25rem;
-        width: 2.25rem;
+    #about {
+        padding: 2rem;
     }
-    
-    .devBarText>h2 {
-        font-size: 4.2vw;
+    .aboutTitle {
+        font-size: 1.5rem;
+        font-weight: 600;
     }
-    .devBarText>p {
-        font-size: 2.7vw;
+    .aboutDesc {
+        text-align: justify;
+        font-size: 4vw;
+    }
+    .tab-contents ul li span {
+        font-size: 3.7vw;
+        font-weight: 600;
+    }
+    .tab-contents ul li {
+        font-size: 3.5vw;
+    }
+    .tab-links {
+        margin-right: 2rem;
+        font-size: 4vw;
+    }
+    .tab-links.active-link::after {
+        width: 100%;
     }
 }

@@ -6,6 +6,8 @@ import { Link } from "react-scroll";
 import MobMenu from "../../assets/menu.png";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   // const [showMenu, setShowMenu] = useState(false);
   // const [isDarkMode, setIsDarkMode] = useState(false);
   // const setDarkMode = () => {
@@ -24,8 +26,6 @@ const Navbar = () => {
   //     setLightMode();
   //   }
   // };
-
-  const [showMenu, setShowMenu] = useState(false);
 
   // -----darkMode-----
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -85,7 +85,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="skills"
+          to="service"
           smooth
           // spy
           offset={-100}
@@ -170,7 +170,7 @@ const Navbar = () => {
         </Link>
         <Link
           activeClass="active"
-          to="skills"
+          to="service"
           smooth
           offset={-100}
           duration={500}

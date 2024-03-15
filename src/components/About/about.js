@@ -1,37 +1,90 @@
-import React from "react";
 import "./about.css";
-import WebDev from "../../assets/web-development.png";
-import MobileDev from "../../assets/mobile-development.png";
 
 function About() {
+  function openTab(e, tabname) {
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    for (let tablink of tablinks) {
+      tablink.classList.remove("active-link");
+    }
+    for (let tabcontent of tabcontents) {
+      tabcontent.classList.remove("active-tab");
+    }
+    e.currentTarget.classList.add("active-link");
+    var tabContent = document.getElementById(tabname);
+    if (tabContent) {
+      tabContent.classList.add("active-tab");
+    }
+  }
+
   return (
     <section id="about">
-      <span className="aboutTitle">What I do </span> <br />
+      <span className="aboutTitle">About Me </span>
       <span className="aboutDesc">
         I am passionate Software Engineer with experience in Web development and
-        Android application development. I have a strong understanding of
-        frontend development and proficient in HTML, CSS and JavaScript.
-        Typscript and Tailwind CSS is my current learning materials. Also
-        proficient with C++ and Java for the Android application development.
-        Morover, I have a basic knowledge of python.{" "}
+        Android application development.
       </span>
-      <div className="aboutBars">
-        <div className="devBar">
-          <img src={WebDev} alt="WebDev" className="devBarImg" />
-          <div className="devBarText">
-            <h2>Wed development</h2>
-            <p>
-              Skill: HTML, CSS, Tailwind, JavaScript, TypeScript, Java, Python
-            </p>
-          </div>
-        </div>
-        <div className="devBar">
-          <img src={MobileDev} alt="MobileDev" className="devBarImg" />
-          <div className="devBarText">
-            <h2>Android application development</h2>
-            <p>Skill: Java, Python, XML</p>
-          </div>
-        </div>
+      <div className="tabs">
+        <p
+          className="tab-links active-link"
+          onClick={(e) => openTab(e, "education")}
+        >
+          Education
+        </p>
+        <p className="tab-links" onClick={(e) => openTab(e, "experience")}>
+          Experiences
+        </p>
+        <p className="tab-links" onClick={(e) => openTab(e, "other")}>
+          Others
+        </p>
+      </div>
+      {/* ---------------Education---------------- */}
+      <div className="tab-contents active-tab" id="education">
+        <ul>
+          <li>
+            <span>Bachelor of Engineering in Software Engineering</span>
+            <br />
+            Xiamen University Malysia
+          </li>
+          <li>
+            <span>HSC</span>
+            <br />
+            Chattogram Biggan Collage
+          </li>
+          <li>
+            <span>SSC</span>
+            <br />
+            Mirza Ahmed Ispahani Smrity Biddalaya
+          </li>
+          <li>
+            <span>JSC</span>
+            <br />
+            Mirza Ahmed Ispahani Smrity Biddalaya
+          </li>
+        </ul>
+      </div>
+      {/* ----------------Experinces----------------- */}
+      <div className="tab-contents" id="experience">
+        <ul>
+          <li>
+            <span>Software Engineer Intern</span>
+            <br />
+            Ronas Netwoork & Services <br />
+            February 2023 - June 2023
+          </li>
+        </ul>
+      </div>
+      {/* ---------------others------------------ */}
+      <div className="tab-contents" id="other">
+        <ul>
+          <li>
+            <span>Volunteering:</span>
+          </li>
+          <li>
+            <span>Sports:</span>
+          </li>
+        </ul>
       </div>
     </section>
   );

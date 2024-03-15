@@ -1,0 +1,128 @@
+#service {
+    min-height: calc(100vh - 8rem);
+    width: 100vw;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 2rem; */
+}
+
+.serviceTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.skillsImgs {
+    width: 100vw;
+    max-width: 70rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skillImg {
+    object-fit: cover;
+    width: 4rem;
+    min-width: 5.5rem;
+    padding: 1.25rem 1.8rem;
+}
+
+/* ----------------- */
+
+.serviceDesc {
+    font-weight: 200;
+    font-size: 1rem;
+    max-width: 55rem;
+    padding: 0 2rem;
+}
+
+.serviceBars {
+    display: flex;
+    margin: 1rem;
+    width: 100vw;
+    max-width: 90%;
+    text-align: left;
+}
+
+.devBar {
+    display: flex;
+    width: 50%;
+    margin: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background: var(--container_color);
+}
+
+.devBarImg {
+    object-fit: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 1.5rem;
+}
+
+.devBarText>h2 {
+    font-size: 1rem;
+}
+
+.devBarText>p {
+    font-size: 0.7rem;
+    font-weight: 200;
+    padding-top: 0.35rem;
+}
+
+@media screen and (max-width:720px) {
+    .serviceBars{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .devBar {
+        width: 90%;
+    }
+    .devBarText>p {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .serviceTitle {
+        font-size: 1.5rem;
+    }
+    .devBar {
+        width: 100%;
+        margin: 0.5rem 0rem;
+        padding: 1rem 1.5rem;
+    }
+    .devBarImg {
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+    .serviceDesc{
+        font-size: 3.5vw;
+        text-align: justify;
+    }
+    .devBarText>h2 {
+        font-size: 3.7vw;
+    }
+    .devBarText>p {
+        font-size: 2.7vw;
+    }
+    .devBarImg {
+        height: 2rem;
+        width: 2rem;
+    }
+    .skillsImgs {
+        width: 90vw;
+    }
+    .skillImg {
+        object-fit: cover;
+        width: 4rem;
+        min-width: 1.5rem;
+        padding: 1rem;
+    }
+}

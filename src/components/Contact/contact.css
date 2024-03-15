@@ -75,3 +75,13 @@
 .link:hover {
     cursor: pointer;
 }
+
+@media screen and (max-width:480px) {
+    .contactTitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .contactForm {
+        padding: 0.5rem;
+    }
+}
