@@ -74,9 +74,23 @@ function Contact() {
         </button>
       </form>
       <div className="socialLinks">
-        <img src={LinkedIn} alt="LinkedIn" className="link" />
-        <img src={Github} alt="Github" className="link" />
-        <img src={Gmail} alt="Gmail" className="link" />
+        <a
+          href="https://www.linkedin.com/in/mohammed-asaduzzaman-asad-ab25a11b3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={LinkedIn} alt="LinkedIn" class="link" />
+        </a>
+        <a
+          href="https://github.com/maza21asad"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={Github} alt="Github" class="link" />
+        </a>
+        <a href="mailto:maza21asad@gmail.com">
+          <img src={Gmail} alt="Gmail" class="link" />
+        </a>
       </div>
     </section>
   );

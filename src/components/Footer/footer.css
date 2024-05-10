@@ -12,6 +12,7 @@
 
 .gmail {
     text-decoration:underline;
+    color: var(--body_color);
 }
 
 .gmail:hover {
@@ -21,6 +22,7 @@
 
 .linkedIn {
     text-decoration:underline;
+    color: var(--body_color);
 }
 
 .linkedIn:hover {

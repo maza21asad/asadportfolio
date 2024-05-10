@@ -7,48 +7,26 @@ import MobMenu from "../../assets/menu.png";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // darkMode
 
-  // const [showMenu, setShowMenu] = useState(false);
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-  // const setDarkMode = () => {
-  //   document.querySelector("body").setAttribute("data-theme", "dark");
-  //   setIsDarkMode(true);
-  // };
-  // const setLightMode = () => {
-  //   document.querySelector("body").setAttribute("data-theme", "light");
-  //   setIsDarkMode(false);
-  // };
-
-  // const toggleTheme = (e) => {
-  //   if (e.target.checked) {
-  //     setDarkMode();
-  //   } else {
-  //     setLightMode();
-  //   }
-  // };
-
-  // -----darkMode-----
-  const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
-    //const selectedTheme = localStorage.getItem("selectedTheme");
-    //if (selectedTheme === "dark") {
     document.querySelector("body").setAttribute("data-theme", "dark");
     setIsDarkMode(true);
-    //}
   }, []);
 
   const toggleTheme = () => {
     const newTheme = isDarkMode ? "light" : "dark";
     document.querySelector("body").setAttribute("data-theme", newTheme);
-    //localStorage.setItem("selectedTheme", newTheme);
     setIsDarkMode(!isDarkMode);
   };
-  // -------------
 
   return (
     <nav className="navbar">
       {/* -----------------Desktop Navbar--------------- */}
-      <img src={logo} alt="Logo" className="logo" />
+      <Link to="intro" smooth offset={-100} duration={500}>
+        {" "}
+        <img src={logo} alt="Logo" className="logo" />{" "}
+      </Link>
       <div className="desktopMenu">
         <Link
           activeClass="active"
@@ -72,7 +50,7 @@ const Navbar = () => {
         >
           About
         </Link>
-        <Link
+        {/* <Link
           activeClass="active"
           to="works"
           smooth
@@ -82,7 +60,7 @@ const Navbar = () => {
           class="desktopMenuListItem"
         >
           Projects
-        </Link>
+        </Link> */}
         <Link
           activeClass="active"
           to="service"
@@ -92,7 +70,7 @@ const Navbar = () => {
           duration={500}
           class="desktopMenuListItem"
         >
-          Clients
+          My Service
         </Link>
       </div>
 
@@ -157,7 +135,7 @@ const Navbar = () => {
         >
           About
         </Link>
-        <Link
+        {/* <Link
           activeClass="active"
           to="works"
           smooth
@@ -167,7 +145,7 @@ const Navbar = () => {
           onClick={() => setShowMenu(false)}
         >
           Projects
-        </Link>
+        </Link> */}
         <Link
           activeClass="active"
           to="service"
@@ -177,7 +155,7 @@ const Navbar = () => {
           class="listItem"
           onClick={() => setShowMenu(false)}
         >
-          Clients
+          My Service
         </Link>
         <Link
           activeClass="active"

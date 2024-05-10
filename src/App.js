@@ -4,7 +4,7 @@ import Footer from "./components/Footer/footer";
 import Intro from "./components/Intro/intro";
 import Navbar from "./components/NavBar/navbar";
 import Services from "./components/Services/services";
-import Works from "./components/Works/works";
+// import Works from "./components/Works/works";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Intro />
       <About />
-      <Works />
+      {/* <Works /> */}
       <Services />
       <Contact />
       <Footer />

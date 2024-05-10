@@ -9,6 +9,7 @@ import CSS from "../../assets/css.png";
 import JavaScript from "../../assets/javascript.png";
 import Github from "../../assets/github.png";
 import Tailwind from "../../assets/tailwind.png";
+import Python from "../../assets/python.png";
 
 function Services() {
   return (
@@ -42,13 +43,14 @@ function Services() {
       </div>
 
       <div className="skillsImgs">
-        <img src={Cpp} alt="" className="skillImg" />
-        <img src={Java} alt="" className="skillImg" />
-        <img src={JavaScript} alt="" className="skillImg" />
-        <img src={Github} alt="" className="skillImg" />
-        <img src={HTML} alt="" className="skillImg" />
-        <img src={CSS} alt="" className="skillImg" />
-        <img src={Tailwind} alt="" className="skillImg" />
+        <img src={Cpp} alt="C++" className="skillImg" />
+        <img src={Java} alt="Java" className="skillImg" />
+        <img src={JavaScript} alt="JavaScript" className="skillImg" />
+        <img src={Python} alt="Python" className="skillImg" />
+        <img src={HTML} alt="HTML" className="skillImg" />
+        <img src={CSS} alt="CSS" className="skillImg" />
+        <img src={Tailwind} alt="Tailwind" className="skillImg" />
+        <img src={Github} alt="Github" className="skillImg" />
       </div>
     </section>
   );
